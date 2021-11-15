@@ -1,7 +1,7 @@
 <template>
   <div id="site_main">
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="!loader">
         <SongCard
           v-for="poster in posters"
           :key="poster.title"
@@ -10,6 +10,9 @@
           :songAuthor="poster.author"
           :songDate="poster.year"
         />
+      </div>
+      <div class="empty_bg" v-else>
+        <h2>Loading...</h2>
       </div>
     </div>
   </div>
@@ -26,7 +29,14 @@ export default {
   data() {
     return {
       posters: [],
+      loader: true,
     };
+  },
+
+  methods: {
+    SeeLoading() {
+      this.loader = false;
+    },
   },
 
   mounted() {
@@ -35,6 +45,7 @@ export default {
       .then((resp) => {
         console.log(resp.data.response);
         this.posters = resp.data.response;
+        setTimeout(this.SeeLoading, 3000);
       })
       .catch((err) => {
         console.error(err, "ERROR");
@@ -44,9 +55,10 @@ export default {
 </script>
 
 <style lang="scss">
-#site_main {
+#site_main,
+.empty_bg {
   background: #1e2d3b;
-  height: calc(100vh - 80px);
+  //   height: calc(100vh - 80px);
   .container {
     padding: 5rem 1rem;
   }
@@ -54,6 +66,10 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .empty_bg {
+    height: calc(100vh - 80px);
+    text-align: center;
   }
 }
 </style>

@@ -33,12 +33,12 @@ export default {
 
   .song_card {
     background: #2e3a46;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 2rem 1rem;
+    margin: 2rem;
     height: 100%;
 
     .song_thumb > img {
-      width: 100%;
+      width: 80%;
     }
     .song_info {
       padding: 1rem 0;
