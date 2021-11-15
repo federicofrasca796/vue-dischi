@@ -1,11 +1,21 @@
 <template>
-  <div></div>
+  <div id="site_main">
+    <div class="container">
+      <div class="row">
+        <SongCard />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import SongCard from "./SongCard.vue";
 import axios from "axios";
 
 export default {
+  components: {
+    SongCard,
+  },
   data() {
     return {
       songs: [],
@@ -25,5 +35,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+#site_main {
+  background: #1e2d3b;
+  height: calc(100vh - 80px);
+  .container {
+    padding: 5rem 1rem;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 </style>

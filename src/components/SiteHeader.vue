@@ -3,7 +3,7 @@
     <img
       src="../assets/Spotify_logo_without_text.svg"
       alt="spotify logo"
-      height="80%"
+      height="60%"
     />
   </div>
 </template>
