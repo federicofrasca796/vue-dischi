@@ -29,11 +29,13 @@ export default {
 .col {
   width: calc(100% / 6);
   text-align: center;
+  margin: 1rem 0;
 
   .song_card {
     background: #2e3a46;
     padding: 1rem;
-    margin: 1rem 3rem;
+    margin: 1rem;
+    height: 100%;
 
     .song_thumb > img {
       width: 100%;
