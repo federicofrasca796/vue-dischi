@@ -3,9 +3,15 @@
 </template>
 
 <script>
+import "./components/SiteHeader.vue";
+import "./components/SiteMain.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    SiteHeader,
+    SiteMain,
+  },
 };
 </script>
 
