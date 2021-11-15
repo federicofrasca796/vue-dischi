@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import "./components/SiteHeader.vue";
-import "./components/SiteMain.vue";
+import SiteHeader from "./components/SiteHeader.vue";
+import SiteMain from "./components/SiteMain.vue";
 
 export default {
   name: "App",
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style>
-@import "../node_modules/bootstrap/scss/bootstrapp.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 </style>
