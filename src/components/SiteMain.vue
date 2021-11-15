@@ -2,7 +2,7 @@
   <div id="site_main">
     <div class="container">
       <div class="row">
-        <SongCard />
+        <SongCard v-for="poster in posters" :key="poster.title" />
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      songs: [],
+      posters: [],
     };
   },
 
@@ -26,7 +26,8 @@ export default {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
-        console.log(resp.data);
+        console.log(resp.data.response);
+        this.posters = resp.data.response;
       })
       .catch((err) => {
         console.error(err, "ERROR");
