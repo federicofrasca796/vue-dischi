@@ -2,20 +2,27 @@
   <div class="col">
     <div class="song_card">
       <div class="song_thumb">
-        <img src="https://picsum.photos/1000" alt="album cover" />
+        <img :src="imgSrc" alt="album cover" />
       </div>
 
       <div class="song_info">
-        <h2 class="song_title">New Jersey</h2>
-        <div class="song_author">Bon Jovi</div>
-        <div class="song_date">1988</div>
+        <h2 class="song_title">{{ songTitle }}</h2>
+        <div class="song_author">{{ songAuthor }}</div>
+        <div class="song_date">{{ songDate }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    songTitle: String,
+    songAuthor: String,
+    songDate: String,
+    imgSrc: String,
+  },
+};
 </script>
 
 <style lang='scss'>

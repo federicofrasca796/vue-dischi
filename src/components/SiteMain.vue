@@ -2,7 +2,14 @@
   <div id="site_main">
     <div class="container">
       <div class="row">
-        <SongCard v-for="poster in posters" :key="poster.title" />
+        <SongCard
+          v-for="poster in posters"
+          :key="poster.title"
+          :imgSrc="poster.poster"
+          :songTitle="poster.title"
+          :songAuthor="poster.author"
+          :songDate="poster.year"
+        />
       </div>
     </div>
   </div>
