@@ -4,7 +4,7 @@
 import axios from "axios";
 
 export default {
-  data() {
+  /* data() {
     return {
       songs: [],
     };
@@ -16,7 +16,7 @@ export default {
       .then((resp) => {
         console.log(resp.data);
       });
-  },
+  }, */
 };
 </script>
 
