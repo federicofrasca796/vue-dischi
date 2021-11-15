@@ -1,10 +1,12 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 import axios from "axios";
 
 export default {
-  /* data() {
+  data() {
     return {
       songs: [],
     };
@@ -15,8 +17,11 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
         console.log(resp.data);
+      })
+      .catch((err) => {
+        console.error(err, "ERROR");
       });
-  }, */
+  },
 };
 </script>
 

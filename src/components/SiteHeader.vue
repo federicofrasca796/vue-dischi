@@ -1,9 +1,9 @@
-/* <template>
+<template>
   <div id="site_header">
     <img
       src="../assets/Spotify_logo_without_text.svg"
       alt="spotify logo"
-      width="20px"
+      height="80%"
     />
   </div>
 </template>
@@ -14,6 +14,10 @@ export default {};
 
 <style lang='scss'>
 #site_header {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 80px;
+  background: #2e3a46;
 }
 </style> 
