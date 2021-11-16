@@ -1,11 +1,11 @@
 <template>
   <div id="site_main">
     <div class="container">
-      <SelectEl @filter-genre="filterGenre" />
+      <SelectEl @filter-genre="selectGenre" />
 
       <div class="row" v-if="!loader">
         <SongCard
-          v-for="poster in posters"
+          v-for="poster in filterGenre"
           :key="poster.title"
           :imgSrc="poster.poster"
           :songTitle="poster.title"
@@ -35,6 +35,7 @@ export default {
     return {
       posters: [],
       loader: true,
+      optionValue: "",
     };
   },
 
@@ -59,10 +60,17 @@ export default {
       this.loader = false;
     },
 
-    filterGenre(optionValue) {
-      console.log(optionValue);
-      //   if optionValue == posters.genre
-      console.log(this.posters.genre);
+    selectGenre(optionValue) {
+      this.optionValue = optionValue;
+    },
+  },
+
+  computed: {
+    filterGenre() {
+      const filteredArr = this.posters.filter((poster) => {
+        return poster.genre.includes(this.optionValue);
+      });
+      return filteredArr;
     },
   },
 };
