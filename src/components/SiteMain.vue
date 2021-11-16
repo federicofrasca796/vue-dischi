@@ -59,6 +59,8 @@ export default {
 .empty_bg {
   background: #1e2d3b;
   //   height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
+  text-align: center;
   .container {
     padding: 5rem 1rem;
   }
@@ -66,10 +68,6 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  .empty_bg {
-    height: calc(100vh - 80px);
-    text-align: center;
   }
 }
 </style>

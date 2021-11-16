@@ -5,6 +5,10 @@
       alt="spotify logo"
       height="60%"
     />
+
+    <select name="genre_filter">
+      <option value=""></option>
+    </select>
   </div>
 </template>
 
