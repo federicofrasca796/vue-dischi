@@ -1,7 +1,7 @@
 <template>
   <div id="site_main">
     <div class="container">
-      <SelectEl />
+      <SelectEl @filter-genre="filterGenre" />
 
       <div class="row" v-if="!loader">
         <SongCard
@@ -38,22 +38,32 @@ export default {
     };
   },
 
+  mounted() {
+    this.CallApi();
+  },
+
   methods: {
+    CallApi() {
+      axios
+        .get("https://flynn.boolean.careers/exercises/api/array/music")
+        .then((resp) => {
+          this.posters = resp.data.response;
+          setTimeout(this.SeeLoading, 1000);
+        })
+        .catch((err) => {
+          console.error(err, "ERROR");
+        });
+    },
+
     SeeLoading() {
       this.loader = false;
     },
-  },
 
-  mounted() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((resp) => {
-        this.posters = resp.data.response;
-        setTimeout(this.SeeLoading, 3000);
-      })
-      .catch((err) => {
-        console.error(err, "ERROR");
-      });
+    filterGenre(optionValue) {
+      console.log(optionValue);
+      //   if optionValue == posters.genre
+      console.log(this.posters.genre);
+    },
   },
 };
 </script>

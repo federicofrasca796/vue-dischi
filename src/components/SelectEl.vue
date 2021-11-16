@@ -1,5 +1,9 @@
 <template>
-  <select name="genre_filter" @change="handleChange()">
+  <select
+    name="genre_filter"
+    v-model="optionValue"
+    @change="$emit('filter-genre', optionValue)"
+  >
     <option selected></option>
     <option value="Rock">Rock</option>
     <option value="Pop">Pop</option>
@@ -10,15 +14,10 @@
 
 <script>
 export default {
-  /* data(){
-        return{
-
-        }
-    }, */
-  methods: {
-    handleChange() {
-      console.log(this.template);
-    },
+  data() {
+    return {
+      optionValue: "",
+    };
   },
 };
 </script>
