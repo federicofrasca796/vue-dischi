@@ -6,14 +6,18 @@
       height="60%"
     />
 
-    <select name="genre_filter">
-      <option value=""></option>
-    </select>
+    <SelectEl />
   </div>
 </template>
 
 <script>
-export default {};
+import SelectEl from "../components/SelectEl.vue";
+
+export default {
+  components: {
+    SelectEl,
+  },
+};
 </script>
 
 <style lang='scss'>
