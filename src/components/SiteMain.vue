@@ -1,6 +1,8 @@
 <template>
   <div id="site_main">
     <div class="container">
+      <SelectEl />
+
       <div class="row" v-if="!loader">
         <SongCard
           v-for="poster in posters"
@@ -20,11 +22,14 @@
 
 <script>
 import SongCard from "./SongCard.vue";
+import SelectEl from "../components/SelectEl.vue";
+
 import axios from "axios";
 
 export default {
   components: {
     SongCard,
+    SelectEl,
   },
   data() {
     return {
@@ -43,7 +48,6 @@ export default {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
-        console.log(resp.data.response);
         this.posters = resp.data.response;
         setTimeout(this.SeeLoading, 3000);
       })

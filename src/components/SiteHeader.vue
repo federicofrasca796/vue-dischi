@@ -5,18 +5,12 @@
       alt="spotify logo"
       height="60%"
     />
-
-    <SelectEl />
   </div>
 </template>
 
 <script>
-import SelectEl from "../components/SelectEl.vue";
-
 export default {
-  components: {
-    SelectEl,
-  },
+  components: {},
 };
 </script>
 

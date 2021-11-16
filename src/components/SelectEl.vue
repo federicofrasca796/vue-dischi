@@ -1,5 +1,5 @@
 <template>
-  <select name="genre_filter">
+  <select name="genre_filter" @change="handleChange()">
     <option selected></option>
     <option value="Rock">Rock</option>
     <option value="Pop">Pop</option>
@@ -9,7 +9,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  /* data(){
+        return{
+
+        }
+    }, */
+  methods: {
+    handleChange() {
+      console.log(this.template);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -17,8 +28,8 @@ select {
   margin-left: auto;
   font-size: 1.5rem;
   color: white;
-  background: #1e2d3b;
-  padding: 0.8rem 1.2rem;
+  background: #2e3a46;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 5px;
 }
